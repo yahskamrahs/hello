@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apology Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff; /* White background */
+            margin: 0;
+            padding: 0;
+        }
+		a {
+  color:#ff6b81;
+  text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color:  #be6e7a;
+  outline: none;
+  text-decoration: none;
+}
+
+        .apology-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+            overflow: hidden; /* Hide overflowing content */
+        }
+
+        h1 {
+            color: #ff6b81; /* Pink color */
+        }
+
+        p {
+            color: #555; /* Dark gray color */
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #no-button {
+            background-color: #ec5e6f; /* Light red */
+            color: #fff;
+        }
+
+        #yes-button {
+            background-color: #ff6b81; /* Pink */
+            color: #fff;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 10px; /* Adjusted border radius */
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #777; /* Light gray color */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="apology-container" id="apology-container">
+        <video autoplay loop muted playsinline id="apology-video">
+            <source src="boy_animation.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1 id="heading">Sorry^</h1>
+        <p id="paragraph">It takes a strong person to say sorry, and an even stronger person to forgive. I want to sincerely apologize for my actions and the impact they've had on you. Please know that I deeply regret my mistakes, and I'm committed to making things right.<br>Tum chaho to Nhi button bhi daba sakti ho...
+		</p>
+        <div class="button-container">
+            <button class="button" id="no-button" onclick="increaseSize()">Nhi</button>
+            <button class="button" id="yes-button" onclick="handleYesClick()">Maaf Kiya</button>
+        </div>
+        <p id="thank-you" style="display: none;">Thank you for your understanding and forgiveness!</p>
+        <p id="cute-messages" style="display: none;">You're amazing! Let's create more happy moments together.</p>
+        <footer>
+			Developed by <a href="https://yahskamrahs.github.io/personal/">Akshay Sharma</a><br> With <a>Love</a>
+     
+		</footer>
+    </div>
+
+    <script>
+        let yesButton = document.getElementById('yes-button');
+        let apologyContainer = document.getElementById('apology-container');
+        let apologyVideo = document.getElementById('apology-video');
+        let heading = document.getElementById('heading');
+        let paragraph = document.getElementById('paragraph');
+        let thankYouMessage = document.getElementById('thank-you');
+        let cuteMessages = document.getElementById('cute-messages');
+
+        let sizeMultiplier = 1;
+
+        function increaseSize() {
+            sizeMultiplier += 0.1;
+            yesButton.style.fontSize = `${16 * sizeMultiplier}px`;
+        }
+
+        function handleYesClick() {
+            // Hide buttons
+            document.querySelector('.button-container').style.display = 'none';
+
+            // Replace video
+            apologyVideo.src = 'new_video.mp4'; // Replace with the actual new video filename
+
+            // Replace heading and paragraph
+            heading.innerText = 'Hoorrey!!';
+            paragraph.style.display = 'none';
+
+            // Show thank you message and cute messages
+            thankYouMessage.style.display = 'block';
+            cuteMessages.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
